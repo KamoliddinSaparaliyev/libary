@@ -1,0 +1,54 @@
+
+###
+GET  http://localhost:3000/admins?filters[is_super]=true
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzNhNzlkNmY4NmUxYzU3ZTBkMzgyYSIsImlzX3N1cGVyIjp0cnVlfSwiaWF0IjoxNjkwNjEwOTM5LCJleHAiOjE2OTA2OTczMzl9.yApqyDvAfZ3Mj3_pc_BPQi9KarMV7BM65AB_T3iKkEg
+
+###
+GET  http://localhost:3000/admins/64b8144f0f9d5d16444416a1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzNhNzlkNmY4NmUxYzU3ZTBkMzgyYSIsImlzX3N1cGVyIjp0cnVlfSwiaWF0IjoxNjkwNjEwOTM5LCJleHAiOjE2OTA2OTczMzl9.yApqyDvAfZ3Mj3_pc_BPQi9KarMV7BM65AB_T3iKkEg
+
+
+###
+POST  http://localhost:3000/admins/login
+Content-Type: application/json
+
+{
+  "username": "leo",
+  "password": "1234"
+}
+
+
+###
+POST http://localhost:3000/admins
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzNhNzlkNmY4NmUxYzU3ZTBkMzgyYSIsImlzX3N1cGVyIjp0cnVlfSwiaWF0IjoxNjkwNTQ0MTIzLCJleHAiOjE2OTA2MzA1MjN9.hnl22Std1AcyQS7MWZluV98QiGQtlR0OL32kiUJV4e0
+Content-Type: application/json
+
+{
+  "full_name": "Leo Messi",
+  "username": "leo",
+  "password": "1234"
+}
+
+###
+PATCH   http://localhost:3000/admins/64c3a79d6f86e1c57e0d382a
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDYxNTQ3MSwiZXhwIjoxNjkwNzAxODcxfQ.7DCy6eXSqeeHbtY9TjgHDDmfIGdjAqMnA7iIJI_EbMA
+Content-Type: application/json
+
+{
+  "full_name": "jone",
+  "username": "ozgardi",
+  "password": "password"
+}
+###
+PATCH   http://localhost:3000/admins/me
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDYxNTQ3MSwiZXhwIjoxNjkwNzAxODcxfQ.7DCy6eXSqeeHbtY9TjgHDDmfIGdjAqMnA7iIJI_EbMA
+Content-Type: application/json
+
+{
+  "full_name": "jone",
+  "username": "jone",
+  "password": "password"
+}
+
+###
+DELETE   http://localhost:3000/admins/64b8144f0f9d5d16444416a1

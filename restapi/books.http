@@ -1,0 +1,32 @@
+
+###
+GET  http://localhost:3000/lists
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTk2NzU2NSwiZXhwIjoxNjkwMDUzOTY1fQ.k03YGlm8RBrTVKEtZuBkV2zm7BopRtTmDc8Q51v8lMM
+
+###
+GET  http://localhost:3000/lists/64b8144f0f9d5d16444416a1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTk2NzU2NSwiZXhwIjoxNjkwMDUzOTY1fQ.k03YGlm8RBrTVKEtZuBkV2zm7BopRtTmDc8Q51v8lMM
+
+
+###
+POST http://localhost:3000/lists
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTk2NzU2NSwiZXhwIjoxNjkwMDUzOTY1fQ.k03YGlm8RBrTVKEtZuBkV2zm7BopRtTmDc8Q51v8lMM
+Content-Type: application/json
+
+{
+  "name": "Orzu",
+  "user": 1
+}
+
+###
+PATCH   http://localhost:3000/lists/64b8144f0f9d5d16444416a1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTc4NTYxOCwiZXhwIjoxNjg5ODcyMDE4fQ.Q0_kOeQsk7em81KYS4CihjsSBa3WT7hSxs3_fAFEkJ4
+Content-Type: application/json
+
+{
+  "name": "Orzu",
+  "user": 1
+}
+
+###
+DELETE   http://localhost:3000/lists/64b8144f0f9d5d16444416a1
