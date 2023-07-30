@@ -2,9 +2,7 @@ const { NotFoundError } = require("../../shared/errors");
 const Book = require("./Book");
 
 const showBook = async ({ id }) => {
-  const book = await Book.findById(id)
-    .populate("author", "name")
-    .populate("publisher", "name address phone");
+  const book = await Book.findOne({ _id: id, is_deleted: false });
 
   if (!book) throw new NotFoundError("Book not found");
 

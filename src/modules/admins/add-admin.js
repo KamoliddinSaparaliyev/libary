@@ -3,9 +3,9 @@ const Admin = require("./Admin");
 const { BadRequestError } = require("../../shared/errors");
 
 const addAdmin = async (data) => {
-  const existing = Admin.findOne({ username: data.username });
+  const existing = await Admin.findOne({ username: data.username });
 
-  if (!existing) throw new BadRequestError("Username already exsist");
+  if (existing) throw new BadRequestError("Username already exsist");
 
   const hashedPassword = await hash(data.password, 10);
 

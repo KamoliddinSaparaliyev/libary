@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-exports.postBorrowerSchema = {
+module.exports.postBorrowerSchema = {
   body: Joi.object({
     full_name: Joi.string().required(),
     address: Joi.string().required(),
@@ -9,13 +9,13 @@ exports.postBorrowerSchema = {
   }),
 };
 
-exports.showBorrowerSchema = {
+module.exports.showBorrowerSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
 };
 
-exports.listBorrowerSchema = {
+module.exports.listBorrowerSchema = {
   query: Joi.object({
     sort: {
       by: Joi.string().valid("id", "full_name").default("id"),
@@ -26,13 +26,12 @@ exports.listBorrowerSchema = {
       offset: Joi.number().integer().min(0).default(0),
     },
     filters: {
-      book: Joi.string().required(),
-      admin: Joi.string().required(),
+      is_deleted: Joi.boolean(),
     },
   }),
 };
 
-exports.patchBorrowerSchema = {
+module.exports.patchBorrowerSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
@@ -43,7 +42,7 @@ exports.patchBorrowerSchema = {
   }),
 };
 
-exports.deleteBorrowerSchmea = {
+module.exports.deleteBorrowerSchmea = {
   params: Joi.object({
     id: Joi.string(),
   }),

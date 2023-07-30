@@ -1,32 +1,39 @@
 
 ###
-GET  http://localhost:3000/lists
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTk2NzU2NSwiZXhwIjoxNjkwMDUzOTY1fQ.k03YGlm8RBrTVKEtZuBkV2zm7BopRtTmDc8Q51v8lMM
-
-###
-GET  http://localhost:3000/lists/64b8144f0f9d5d16444416a1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTk2NzU2NSwiZXhwIjoxNjkwMDUzOTY1fQ.k03YGlm8RBrTVKEtZuBkV2zm7BopRtTmDc8Q51v8lMM
+GET  http://localhost:3000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
 ###
-POST http://localhost:3000/lists
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTk2NzU2NSwiZXhwIjoxNjkwMDUzOTY1fQ.k03YGlm8RBrTVKEtZuBkV2zm7BopRtTmDc8Q51v8lMM
+GET  http://localhost:3000/books/64c601031331d251ee182d34
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+
+
+
+###
+POST http://localhost:3000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
 {
-  "name": "Orzu",
-  "user": 1
+  "title": "Foo",
+  "publisher":"64c6034d1331d251ee182d40",
+  "author":"64c601031331d251ee182d34",
+  "copies":23
 }
 
 ###
-PATCH   http://localhost:3000/lists/64b8144f0f9d5d16444416a1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRiODE0NjcwZjlkNWQxNjQ0NDQxNmE1In0sImlhdCI6MTY4OTc4NTYxOCwiZXhwIjoxNjg5ODcyMDE4fQ.Q0_kOeQsk7em81KYS4CihjsSBa3WT7hSxs3_fAFEkJ4
+PATCH   http://localhost:3000/books
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
 {
-  "name": "Orzu",
-  "user": 1
+  "title": "Foo 1",
+  "publisher":"64c6034d1331d251ee182d40",
+  "author":"64c601031331d251ee182d34",
+  "copies":23
 }
 
 ###
-DELETE   http://localhost:3000/lists/64b8144f0f9d5d16444416a1
+DELETE   http://localhost:3000/books/64c601031331d251ee182d34
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o

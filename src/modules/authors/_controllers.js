@@ -1,6 +1,10 @@
 const express = require("express");
-const addAuthor = require("./add-author");
 const httpValidator = require("../../shared/http-validator");
+const showAuthor = require("./show-author");
+const removeAuthor = require("./remove-author");
+const addAuthor = require("./add-author");
+const listAuthors = require("./list-authors");
+const editAuthor = require("./edit-author");
 const {
   postAuthorSchema,
   patchAuthorSchema,
@@ -8,10 +12,6 @@ const {
   showAuthorSchema,
   listAuthorSchema,
 } = require("./_schemas");
-const showAuthor = require("./show-author");
-const { removeAuthor } = require("./remove-author");
-const listAuthors = require("./list-authors");
-const { editAuthor } = require("./edit-author");
 
 /**
  * @param {express.Request} req

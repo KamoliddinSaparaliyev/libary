@@ -1,6 +1,10 @@
 const express = require("express");
-const addBook = require("./add-book");
 const httpValidator = require("../../shared/http-validator");
+const addBook = require("./add-book");
+const showBook = require("./show-book");
+const removeBook = require("./remove-book");
+const listBooks = require("./list-books");
+const editBook = require("./edit-book");
 const {
   postBookSchema,
   patchBookSchema,
@@ -8,10 +12,6 @@ const {
   showBookSchema,
   listBookSchema,
 } = require("./_schemas");
-const showBook = require("./show-book");
-const { removeBook } = require("./remove-book");
-const listBooks = require("./list-books");
-const { editBook } = require("./edit-book");
 
 /**
  * @param {express.Request} req

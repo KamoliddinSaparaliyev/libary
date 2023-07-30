@@ -1,4 +1,5 @@
 const express = require("express");
+const isLoggedIn = require("../../shared/auth/is-loggedin");
 const {
   postPublisher,
   getPublishers,
@@ -6,8 +7,6 @@ const {
   patchPublisher,
   deletePublisher,
 } = require("./_controllers");
-const isLoggedIn = require("../../shared/auth/is-loggedin");
-const isSuper = require("../../shared/auth/is-super");
 
 const router = express.Router();
 

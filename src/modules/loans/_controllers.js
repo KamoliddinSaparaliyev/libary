@@ -5,9 +5,11 @@ const {
   postLoanSchema,
   showLoanSchema,
   listLoanSchema,
+  patchLoanSchema,
 } = require("./_schemas");
 const showLoan = require("./show-loan");
 const listLoans = require("./list-loans");
+const editLoan = require("./edit-loan");
 
 /**
  * @param {express.Request} req
@@ -18,7 +20,7 @@ const postLoan = async (req, res, next) => {
   try {
     httpValidator({ body: req.body }, postLoanSchema);
 
-    const result = await addLoan(req.body);
+    const result = await addLoan({ ...req.body, admin: req.admin.id });
     console.log(req.body);
 
     res.status(201).json({
@@ -54,9 +56,23 @@ const getLoan = async (req, res, next) => {
     next(error);
   }
 };
+const patchLoan = async (req, res, next) => {
+  try {
+    httpValidator({ params: req.params }, patchLoanSchema);
+
+    const result = await editLoan(req.params);
+
+    res.status(201).json({
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = {
   postLoan,
   getLoan,
   getLoans,
+  patchLoan,
 };

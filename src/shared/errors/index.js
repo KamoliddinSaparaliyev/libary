@@ -38,23 +38,20 @@ class ForbiddenError extends Error {
   }
 }
 
-const errorMiddlewareFunc = (req, res, next, err) => {
-  let status = 500;
+class ConflictError extends Error {
+  constructor(msg) {
+    super(msg);
 
-  if (err instanceof BadRequestError) status = 400;
-  else if (err instanceof UnauthorizedError) status = 401;
-  else if (err instanceof ForbiddenError) status = 403;
-  else if (err instanceof NotFoundError) status = 404;
-
-  console.log(err.msg);
-
-  res.status(status).json({ error: err.message });
-};
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, ConflictError);
+    }
+  }
+}
 
 module.exports = {
-  errorMiddlewareFunc,
   BadRequestError,
   NotFoundError,
   ForbiddenError,
   UnauthorizedError,
+  ConflictError,
 };

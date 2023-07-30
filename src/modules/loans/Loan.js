@@ -24,6 +24,11 @@ const loanSchema = new mongoose.Schema({
     ref: "Borrower",
     required: true,
   },
+  status: {
+    type: String,
+    enum: ["pending", "completed", "overdue"],
+    default: "pending",
+  },
 });
 
 const Loan = mongoose.model("Loan", loanSchema);

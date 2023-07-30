@@ -11,8 +11,7 @@ const express = require("express");
 const isSuper = async (req, res, next) => {
   try {
     if (!req.admin.is_super) throw new ForbiddenError("Ruxsat yo'q");
-
-    return res.status(200);
+    next();
   } catch (error) {
     next(error);
   }

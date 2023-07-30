@@ -1,26 +1,27 @@
 
 ###
-GET  http://localhost:3000/authors
+GET  http://localhost:3000/publishers
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
 ###
-GET  http://localhost:3000/authors/64c601031331d251ee182d34
+GET  http://localhost:3000/publishers
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
-
 ###
-POST http://localhost:3000/authors
+POST http://localhost:3000/publishers
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
 {
-  "full_name": "Ezop"
+  "name": "PrintWell",
+  "address": "Chilonzor",
+  "phone": "+998712322232"
 }
 
 ###
-PATCH   http://localhost:3000/authors/64c601031331d251ee182d34
+PATCH   http://localhost:3000/publishers/64c601031331d251ee182d34
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
@@ -29,5 +30,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE   http://localhost:3000/authors/64c601031331d251ee182d34
+DELETE   http://localhost:3000/publishers/64c601031331d251ee182d34
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o

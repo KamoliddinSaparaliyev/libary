@@ -1,34 +1,20 @@
 const Joi = require("joi");
 
-exports.postLoanSchema = {
+module.exports.postLoanSchema = {
   body: Joi.object({
     book: Joi.string().required(),
-    out_date: Joi.date().iso().required(),
-    due_date: Joi.date()
-      .iso()
-      .required()
-      .custom((value, helpers) => {
-        const twoMonthsFromOutDate = new Date(helpers.prefs.context.out_date);
-        twoMonthsFromOutDate.setMonth(twoMonthsFromOutDate.getMonth() + 2);
-
-        if (new Date(value) > twoMonthsFromOutDate) {
-          return helpers.error("any.invalid");
-        }
-
-        return value;
-      }),
-    admin: Joi.string().required(),
+    due_date: Joi.date().iso().required(),
     borrower: Joi.string().required(),
   }),
 };
 
-exports.showLoanSchema = {
+module.exports.showLoanSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
 };
 
-exports.listLoanSchema = {
+module.exports.listLoanSchema = {
   query: Joi.object({
     sort: {
       by: Joi.string().valid("out_date", "due_date").default("out_date"),
@@ -40,30 +26,13 @@ exports.listLoanSchema = {
     },
     filters: {
       book: Joi.string().required(),
-      admin: Joi.string().required(),
+      borrower: Joi.string().required(),
+      status: Joi.string().required(),
     },
   }),
 };
 
-exports.patchLoanSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
-  body: Joi.object({
-    name: Joi.string(),
-  }),
-};
-
-exports.updatePasswordSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
-  body: Joi.object({
-    name: Joi.string(),
-  }),
-};
-
-exports.deleteLoanSchmea = {
+module.exports.patchLoanSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),

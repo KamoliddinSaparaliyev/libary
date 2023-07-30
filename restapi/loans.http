@@ -1,33 +1,34 @@
 
 ###
-GET  http://localhost:3000/authors
+GET  http://localhost:3000/loans
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
 ###
-GET  http://localhost:3000/authors/64c601031331d251ee182d34
+GET  http://localhost:3000/loans/64c601031331d251ee182d34
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
 
 ###
-POST http://localhost:3000/authors
+POST http://localhost:3000/loans
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
 {
-  "full_name": "Ezop"
+  "book": "64c603b9ed5850fea377f0ab",
+  "due_date":"2023-10-30",
+  "borrower":"64c607fb8b1763f58bb80af5"
 }
 
 ###
-PATCH   http://localhost:3000/authors/64c601031331d251ee182d34
+PATCH   http://localhost:3000/loans
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
 {
-  "full_name": "Ezop2"
+  "title": "Foo 1",
+  "publisher":"64c6034d1331d251ee182d40",
+  "author":"64c601031331d251ee182d34",
+  "copies":23
 }
-
-###
-DELETE   http://localhost:3000/authors/64c601031331d251ee182d34
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o

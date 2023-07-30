@@ -9,9 +9,9 @@ const {
   listBorrowerSchema,
 } = require("./_schemas");
 const showBorrower = require("./show-borrower");
-const { removeBorrower } = require("./remove-borrower");
+const removeBorrower = require("./remove-borrower");
 const listBorrowers = require("./list-borrowers");
-const { editBorrower } = require("./edit-borrower");
+const editBorrower = require("./edit-borrower");
 
 /**
  * @param {express.Request} req

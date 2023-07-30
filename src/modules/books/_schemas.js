@@ -1,22 +1,22 @@
 const Joi = require("joi");
 
-exports.postBookSchema = {
+module.exports.postBookSchema = {
   body: Joi.object({
     title: Joi.string().required(),
     publisher: Joi.string().required(),
-    book: Joi.string().required(),
+    author: Joi.string().required(),
     copies: Joi.number().required(),
     is_deleted: Joi.boolean().default(false),
   }),
 };
 
-exports.showBookSchema = {
+module.exports.showBookSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
 };
 
-exports.listBookSchema = {
+module.exports.listBookSchema = {
   query: Joi.object({
     sort: {
       by: Joi.string().valid("id", "copies").default("id"),
@@ -32,19 +32,19 @@ exports.listBookSchema = {
   }),
 };
 
-exports.patchBookSchema = {
+module.exports.patchBookSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
   body: Joi.object({
     title: Joi.string(),
     publisher: Joi.string(),
-    book: Joi.string(),
+    author: Joi.string(),
     copies: Joi.number(),
   }),
 };
 
-exports.deleteBookSchmea = {
+module.exports.deleteBookSchmea = {
   params: Joi.object({
     id: Joi.string(),
   }),

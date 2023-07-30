@@ -17,7 +17,7 @@ router.get("/admins", isLoggedIn, getAdmins);
 router.get("/admins/:id", isLoggedIn, getAdmin);
 router.patch("/admins/:id", isLoggedIn, patchAdmin);
 router.patch("/admins/me", isLoggedIn, patchAdmin);
-router.post("/admins/login", loginAdmin);
 router.delete("/admins/:id", isLoggedIn, isSuper, deleteAdmin);
+router.post("/admins/login", loginAdmin);
 
 module.exports = router;

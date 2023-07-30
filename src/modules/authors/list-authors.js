@@ -2,7 +2,7 @@ const Author = require("./Author");
 
 const listAuthors = async ({ q, page, sort, filters }) => {
   const { limit = 10, offset = 0 } = page || {};
-  const { by = "name", order = "DESC" } = sort || {};
+  const { by = "full_name", order = "desc" } = sort || {};
   const { is_deleted } = filters || {};
 
   const filter = {};
@@ -14,7 +14,7 @@ const listAuthors = async ({ q, page, sort, filters }) => {
   }
   const total = await Author.countDocuments(filter);
   const authors = await Author.find(filter)
-    .sort({ [by]: order === "DESC" ? -1 : 1 })
+    .sort({ [by]: order === "desc" ? -1 : 1 })
     .skip(offset)
     .limit(limit);
 

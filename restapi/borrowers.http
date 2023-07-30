@@ -1,33 +1,36 @@
 
 ###
-GET  http://localhost:3000/authors
+GET  http://localhost:3000/borrowers
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
 ###
-GET  http://localhost:3000/authors/64c601031331d251ee182d34
+GET  http://localhost:3000/borrowers/64c60413ed5850fea377f0ad
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 
 
-
 ###
-POST http://localhost:3000/authors
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
-Content-Type: application/json
-
-{
-  "full_name": "Ezop"
-}
-
-###
-PATCH   http://localhost:3000/authors/64c601031331d251ee182d34
+POST http://localhost:3000/borrowers
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
 Content-Type: application/json
 
 {
-  "full_name": "Ezop2"
+  "full_name": "Jone doe",
+  "address": "Chilonzor",
+  "phone": "+998900010101"
 }
 
 ###
-DELETE   http://localhost:3000/authors/64c601031331d251ee182d34
+PATCH   http://localhost:3000/borrowers/64c60413ed5850fea377f0ad
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+Content-Type: application/json
+
+{
+  "full_name": "Jone Doe",
+  "address": "Chilonzor",
+  "phone": "+998900010102"
+}
+
+###
+DELETE   http://localhost:3000/borrowers/64c60413ed5850fea377f0ad
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o

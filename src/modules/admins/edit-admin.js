@@ -2,8 +2,8 @@ const { NotFoundError, BadRequestError } = require("../../shared/errors");
 const Admin = require("./Admin");
 const changePassword = require("./change-password");
 
-exports.editAdmin = async ({ id, ...changes }) => {
-  const existing = await Admin.findById(id);
+const editAdmin = async ({ id, changes }) => {
+  const existing = await Admin.findOne({ _id: id, is_deleted: false });
   if (!existing) throw new NotFoundError("Admin not found");
 
   const existingUsername = await Admin.findOne({ username: changes.username });
@@ -24,3 +24,5 @@ exports.editAdmin = async ({ id, ...changes }) => {
   );
   return updated;
 };
+
+module.exports = editAdmin;

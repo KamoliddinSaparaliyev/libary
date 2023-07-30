@@ -9,21 +9,21 @@ const {
   listPublisherSchema,
 } = require("./_schemas");
 const showPublisher = require("./show-publisher");
-const { removePublisher } = require("./remove-publisher");
+const removePublisher = require("./remove-publisher");
 const listPublishers = require("./list-publishers");
-const { editPublisher } = require("./edit-publisher");
+const editPublisher = require("./edit-publisher");
 
 /**
  * @param {express.Request} req
  * @param {express.Response} res
  * @param {express.NextFunction} next
  */
+
 const postPublisher = async (req, res, next) => {
   try {
     httpValidator({ body: req.body }, postPublisherSchema);
 
     const result = await addPublisher(req.body);
-    console.log(req.body);
 
     res.status(201).json({
       data: result,

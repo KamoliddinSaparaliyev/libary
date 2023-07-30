@@ -2,7 +2,7 @@ const Book = require("./Book");
 
 const listBooks = async ({ q, page, sort, filters }) => {
   const { limit = 10, offset = 0 } = page || {};
-  const { by = "copies", order = "DESC" } = sort || {};
+  const { by = "copies", order = "desc" } = sort || {};
   const { is_deleted, publisher, author } = filters || {};
   const filter = {};
   if (q) {
@@ -19,7 +19,7 @@ const listBooks = async ({ q, page, sort, filters }) => {
   }
   const total = await Book.countDocuments(filter);
   const books = await Book.find(filter)
-    .sort({ [by]: order === "DESC" ? -1 : 1 })
+    .sort({ [by]: order === "desc" ? -1 : 1 })
     .skip(offset)
     .limit(limit)
     .populate("author", "name")

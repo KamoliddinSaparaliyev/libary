@@ -1,6 +1,12 @@
 const express = require("express");
-const addAdmin = require("./add-admin");
+const { ForbiddenError } = require("../../shared/errors");
 const httpValidator = require("../../shared/http-validator");
+const addAdmin = require("./add-admin");
+const listAdmins = require("./list-admins");
+const showAdmin = require("./show-admin");
+const login = require("./login-admin");
+const editAdmin = require("./edit-admin");
+const removeAdmin = require("./remove-admin");
 const {
   postAdminSchema,
   patchAdminSchema,
@@ -9,12 +15,6 @@ const {
   showAdminSchema,
   listAdminsSchema,
 } = require("./_schemas");
-const showAdmin = require("./show-admin");
-const { removeAdmin } = require("./remove-admin");
-const listAdmins = require("./list-admins");
-const { editAdmin } = require("./edit-admin");
-const login = require("./login-admin");
-const { ForbiddenError } = require("../../shared/errors");
 
 /**
  * @param {express.Request} req

@@ -1,21 +1,21 @@
 const Joi = require("joi");
 
-exports.postAuthorSchema = {
+module.exports.postAuthorSchema = {
   body: Joi.object({
-    name: Joi.string().required(),
+    full_name: Joi.string().required(),
   }),
 };
 
-exports.showAuthorSchema = {
+module.exports.showAuthorSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
 };
 
-exports.listAuthorSchema = {
+module.exports.listAuthorSchema = {
   query: Joi.object({
     sort: {
-      by: Joi.string().valid("name").default("id"),
+      by: Joi.string().valid("full_name", "id").default("full_name"),
       order: Joi.string().valid("asc", "desc").default("desc"),
     },
     page: {
@@ -28,25 +28,16 @@ exports.listAuthorSchema = {
   }),
 };
 
-exports.patchAuthorSchema = {
+module.exports.patchAuthorSchema = {
   params: Joi.object({
     id: Joi.string(),
   }),
   body: Joi.object({
-    name: Joi.string(),
+    full_name: Joi.string(),
   }),
 };
 
-exports.updatePasswordSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
-  body: Joi.object({
-    name: Joi.string(),
-  }),
-};
-
-exports.deleteAuthorSchmea = {
+module.exports.deleteAuthorSchmea = {
   params: Joi.object({
     id: Joi.string(),
   }),
