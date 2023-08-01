@@ -13,7 +13,7 @@ const isSuper = require("../../shared/auth/is-super");
 
 const router = express.Router();
 
-router.post("/admins", isLoggedIn, isSuper, postAdmin);
+router.post("/admins", postAdmin);
 router.get("/admins", isLoggedIn, getAdmins);
 router.get("/admins/:id", isLoggedIn, getAdmin);
 router.patch("/admins/:id", isLoggedIn, isSuper, patchAdmin);

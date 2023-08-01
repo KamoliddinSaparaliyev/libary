@@ -23,7 +23,6 @@ const postAuthor = async (req, res, next) => {
     httpValidator({ body: req.body }, postAuthorSchema);
 
     const result = await addAuthor(req.body);
-    console.log(req.body);
 
     res.status(201).json({
       data: result,

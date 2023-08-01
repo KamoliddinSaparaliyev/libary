@@ -1,39 +1,38 @@
 
 ###
 GET  http://localhost:3000/books
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzhkZTE5OTUwNDU3ZjVhZDZmMDdlNiIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDg4NTkxMywiZXhwIjoxNjkwOTcyMzEzfQ.VGtbk22tUs9QbLCdZgf7VgnQQwWtUruQNNcOpAM2uxg
 
 
 ###
 GET  http://localhost:3000/books/64c601031331d251ee182d34
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzhkZTE5OTUwNDU3ZjVhZDZmMDdlNiIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDg4NTkxMywiZXhwIjoxNjkwOTcyMzEzfQ.VGtbk22tUs9QbLCdZgf7VgnQQwWtUruQNNcOpAM2uxg
 
 
 
 ###
 POST http://localhost:3000/books
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzhkZTE5OTUwNDU3ZjVhZDZmMDdlNiIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDg4NTkxMywiZXhwIjoxNjkwOTcyMzEzfQ.VGtbk22tUs9QbLCdZgf7VgnQQwWtUruQNNcOpAM2uxg
 Content-Type: application/json
 
 {
-  "title": "Foo",
-  "publisher":"64c6034d1331d251ee182d40",
-  "author":"64c601031331d251ee182d34",
+  "title": "Foo 1",
+  "publisher":"64c8e017791b20dbd00c5a58",
+  "author":"64c8dfa275f88bd53daae019",
   "copies":23
 }
 
 ###
 PATCH   http://localhost:3000/books
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzhkZTE5OTUwNDU3ZjVhZDZmMDdlNiIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDg4NTkxMywiZXhwIjoxNjkwOTcyMzEzfQ.VGtbk22tUs9QbLCdZgf7VgnQQwWtUruQNNcOpAM2uxg
 Content-Type: application/json
 
 {
   "title": "Foo 1",
   "publisher":"64c6034d1331d251ee182d40",
-  "author":"64c601031331d251ee182d34",
+  "author":"64c8dfa275f88bd53daae019",
   "copies":23
 }
 
 ###
-DELETE   http://localhost:3000/books/64c601031331d251ee182d34
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzRiZDUyMzRjMjk5MTc0MzQyZDdhMyIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDY5NzQwNSwiZXhwIjoxNjkwNzgzODA1fQ.mmbemJBfK07UKPKkaSDjcV730lmfB33BBOHqIC3Ms7o
+DELETE   http://localhost:3000/books/64c601031331d251ee182d34Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjY0YzhkZTE5OTUwNDU3ZjVhZDZmMDdlNiIsImlzX3N1cGVyIjpmYWxzZX0sImlhdCI6MTY5MDg4NTkxMywiZXhwIjoxNjkwOTcyMzEzfQ.VGtbk22tUs9QbLCdZgf7VgnQQwWtUruQNNcOpAM2uxg
