@@ -6,17 +6,18 @@ const {
   patchAdmin,
   deleteAdmin,
   loginAdmin,
+  patchMe,
 } = require("./_controllers");
 const isLoggedIn = require("../../shared/auth/is-loggedin");
 const isSuper = require("../../shared/auth/is-super");
 
 const router = express.Router();
 
-router.post("/admins", isLoggedIn, postAdmin);
+router.post("/admins", isLoggedIn, isSuper, postAdmin);
 router.get("/admins", isLoggedIn, getAdmins);
 router.get("/admins/:id", isLoggedIn, getAdmin);
-router.patch("/admins/:id", isLoggedIn, patchAdmin);
-router.patch("/admins/me", isLoggedIn, patchAdmin);
+router.patch("/admins/:id", isLoggedIn, isSuper, patchAdmin);
+router.patch("/admins/me", isLoggedIn, patchMe);
 router.delete("/admins/:id", isLoggedIn, isSuper, deleteAdmin);
 router.post("/admins/login", loginAdmin);
 

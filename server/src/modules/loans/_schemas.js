@@ -1,4 +1,5 @@
 const Joi = require("joi");
+const { pageSchema, buildSortSchema } = require("../../shared/g-schema");
 
 module.exports.postLoanSchema = {
   body: Joi.object({
@@ -16,14 +17,8 @@ module.exports.showLoanSchema = {
 
 module.exports.listLoanSchema = {
   query: Joi.object({
-    sort: {
-      by: Joi.string().valid("out_date", "due_date").default("out_date"),
-      order: Joi.string().valid("asc", "desc").default("asc"),
-    },
-    page: {
-      limit: Joi.number().integer().min(1).default(10),
-      offset: Joi.number().integer().min(0).default(0),
-    },
+    sort: buildSortSchema(["out_date", "due_date"]),
+    page: pageSchema,
     filters: {
       book: Joi.string().required(),
       borrower: Joi.string().required(),

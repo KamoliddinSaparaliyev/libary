@@ -15,7 +15,7 @@ const addLoan = async ({ book, due_date, borrower, admin }) => {
   if (!exsitingBorrower) throw new NotFoundError("Borrower not found");
 
   //Ijara vaqti otib ketgan kitobni tekirish
-  const exsitingBorrowerLoan = await Borrower.find({
+  const exsitingBorrowerLoan = await Loan.find({
     borrower,
     status: "overdue",
   });
@@ -25,7 +25,7 @@ const addLoan = async ({ book, due_date, borrower, admin }) => {
     );
 
   //Ijara vaqtida kitoxonni ijaralar soni
-  const exsitingBorrowerLoanPending = await Borrower.find({
+  const exsitingBorrowerLoanPending = await Loan.find({
     borrower,
     status: "pending",
   });

@@ -1,4 +1,5 @@
 const Joi = require("joi");
+const { pageSchema, buildSortSchema } = require("../../shared/g-schema");
 
 exports.postPublisherSchema = {
   body: Joi.object({
@@ -18,14 +19,9 @@ exports.showPublisherSchema = {
 exports.listPublisherSchema = {
   query: Joi.object({
     q: Joi.string(),
-    page: {
-      limit: Joi.number(),
-      offset: Joi.number(),
-    },
-    sort: {
-      by: Joi.string(),
-      order: Joi.string(),
-    },
+    page: pageSchema,
+
+    sort: buildSortSchema(["is_deleted"]),
     filters: {
       is_super: Joi.boolean(),
     },

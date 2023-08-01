@@ -37,18 +37,21 @@ const postAdmin = async (req, res, next) => {
 
 const patchAdmin = async (req, res, next) => {
   try {
-    let result;
-    const isAdminEditingOwnInfo = !req.params.id || req.params.id === "me";
-
-    httpValidator({ body: req.body, params: req.params }, patchAdminSchema);
-
-    if (req.admin.is_super && !isAdminEditingOwnInfo) {
-      result = await editAdmin({ id: req.params.id, changes: req.body });
-    } else if (isAdminEditingOwnInfo) {
-      result = await editAdmin({ id: req.admin.id, changes: req.body });
-    } else {
-      throw new ForbiddenError("Ruxsat yo'q");
-    }
+    httpValidator({ params: req.admin.id, body: req.body }, patchAdminSchema);
+    const result = await editAdmin({ id: req.params.id, changes: req.body });
+    res.status(201).json({
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+const patchMe = async (req, res, next) => {
+  try {
+    const result = await editAdmin(
+      { id: req.admin.id, changes: req.body },
+      patchAdminSchema
+    );
 
     res.status(201).json({
       data: result,
@@ -63,7 +66,7 @@ const getAdmins = async (req, res, next) => {
 
     const result = await listAdmins(req.query);
 
-    res.status(201).json({
+    res.status(200).json({
       data: result,
     });
   } catch (error) {
@@ -76,7 +79,7 @@ const getAdmin = async (req, res, next) => {
 
     const result = await showAdmin(req.params);
 
-    res.status(201).json({
+    res.status(200).json({
       data: result,
     });
   } catch (error) {
@@ -115,6 +118,7 @@ module.exports = {
   getAdmin,
   getAdmins,
   patchAdmin,
+  patchMe,
   deleteAdmin,
   loginAdmin,
 };

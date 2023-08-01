@@ -36,7 +36,7 @@ const getLoans = async (req, res, next) => {
     httpValidator({ query: req.query }, listLoanSchema);
     const result = await listLoans(req.query);
 
-    res.status(201).json({
+    res.status(200).json({
       data: result,
     });
   } catch (error) {
@@ -49,7 +49,7 @@ const getLoan = async (req, res, next) => {
 
     const result = await showLoan(req.params);
 
-    res.status(201).json({
+    res.status(200).json({
       data: result,
     });
   } catch (error) {

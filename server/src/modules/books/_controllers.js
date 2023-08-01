@@ -51,7 +51,7 @@ const getBooks = async (req, res, next) => {
     httpValidator({ query: req.query }, listBookSchema);
     const result = await listBooks(req.query);
 
-    res.status(201).json({
+    res.status(200).json({
       data: result,
     });
   } catch (error) {
@@ -64,7 +64,7 @@ const getBook = async (req, res, next) => {
 
     const result = await showBook(req.params);
 
-    res.status(201).json({
+    res.status(200).json({
       data: result,
     });
   } catch (error) {

@@ -5,7 +5,7 @@ const config = require("../../shared/config");
 const { NotFoundError, UnauthorizedError } = require("../../shared/errors");
 
 const login = async ({ username, password }) => {
-  const existing = await Admin.findOne({ username });
+  const existing = await Admin.findOne({ username, is_deleted: false });
   if (!existing) throw new NotFoundError("Admin not found");
 
   const match = await compare(password, existing.password);

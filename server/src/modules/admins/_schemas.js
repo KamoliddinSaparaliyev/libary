@@ -1,4 +1,5 @@
 const Joi = require("joi");
+const { pageSchema, buildSortSchema } = require("../../shared/g-schema");
 
 module.exports.postAdminSchema = {
   body: Joi.object({
@@ -50,14 +51,8 @@ module.exports.deleteAdminSchmea = {
 module.exports.listAdminsSchema = {
   query: Joi.object({
     q: Joi.string(),
-    sort: {
-      by: Joi.string().valid("full_name", "username").default("username"),
-      order: Joi.string().valid("asc", "desc").default("desc"),
-    },
-    page: {
-      limit: Joi.number().integer().min(1).default(10),
-      offset: Joi.number().integer().min(0).default(0),
-    },
+    sort: buildSortSchema(["full_name", "username"]),
+    page: pageSchema,
     filters: {
       is_deleted: Joi.boolean().default(false),
       is_super: Joi.boolean().default(false),
